@@ -7,12 +7,10 @@ let port = 3001;
 server.use(cors());
 server.use(bodyParser.json());
 
-let colors = ['green', 'red', 'blue', 'yellow'];
+let ranInt = (lower,upper) => Math.floor(Math.random()*(upper-lower+1))+lower;
 
 server.get('/boi', (req,res)=>{
-   let ranNum = Math.floor(Math.random()*colors.length);
-
-   res.json({color: colors[ranNum]});
+   res.json({color: `rgb(${ranInt(0,255)},${ranInt(0,255)},${ranInt(0,255)})`});
 });
 
 server.listen(port, console.log(`listening on port ${port}`));

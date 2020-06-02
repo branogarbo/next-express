@@ -14,9 +14,5 @@ export default function Home() {
 		setColor(res.color);
 	}
 
-   return (
-      <div className="container">
-			<h1 style={style} onClick={fetchServer}>bruh</h1>
-      </div>
-   )
+   return <b className="text" style={style} onMouseDown={fetchServer}>bruh</b>
 }
